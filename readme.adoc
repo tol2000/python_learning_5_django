@@ -2,8 +2,17 @@
 
 Django! :)
 
+.Stopped at
+|===
+| video | stopped at
+
+| Подготовительный Python, занятие 5.mp4
+| at 52:48
+|===
+
 == Install
 
+.Install steps
 [source, bash]
 ----
 # install django
