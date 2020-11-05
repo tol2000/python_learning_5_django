@@ -1,0 +1,12 @@
+{% extends 'homepage/base.html' %}
+
+{% block 'page_title' %}
+Articles
+{% endblock %}
+
+{% block body %}
+<h2>Articles</h2>
+<hr>
+<a href="{% url 'homepage:index' %}">Index page</a>
+<hr>
+{% endblock %}
