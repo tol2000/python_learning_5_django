@@ -2,3 +2,31 @@
 
 Django! :)
 
+== Install
+
+[source, bash]
+----
+# install django
+python -m pip install django --user
+
+# create project
+cd py_projects
+django-admin startproject python_learning_5_django
+cd python_learning_5_django
+
+# create git repo
+echo "= python_learning_5_django" >> readme.adoc
+git init
+git add .
+git commit -m "Initial created by django-admin and Tolic"
+git branch -M master
+git remote add origin git@github.com:tol2000/python_learning_5_django.git
+git push -u origin master
+
+# test project in django embedded test web server
+python manage.py runserver
+
+# create app homepage
+python manage.py startapp homepage
+----
+
