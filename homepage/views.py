@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest
+from django.views.decorators.http import require_GET
 import datetime
 
 
@@ -12,5 +13,14 @@ def index_page(request: HttpRequest):
     return response
 
 
+@require_GET
 def articles(request: HttpRequest):
-    return render(request, 'homepage/articles.html')
+    articles_list = [
+        f'Article # {x}' for x in range(1, 8)
+    ]
+    args = {
+        'articles': articles_list,
+        'client_info':
+            f'{request.method} to host {request.get_host()}'
+    }
+    return render(request, 'homepage/articles.html', args)
