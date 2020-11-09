@@ -5,11 +5,12 @@ Articles
 {% endblock %}
 
 {% block body %}
-<h2>Articles</h2>
+<h3>Articles ({{ articles|length }})</h3>
+
 <ul class="list-group">
     {% for article in articles %}
     <li class="list-group-item list-group-item-{% cycle 'primary' 'secondary' %}">
-        {{ article }}
+        <a href="{% url 'homepage:index' %}">Article # {{ article }}</a>
     </li>
     {% endfor %}
 </ul>

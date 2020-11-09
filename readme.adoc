@@ -6,8 +6,8 @@ Django! :)
 |===
 | video | stopped at
 
-| Подготовительный Python, занятие 5.mp4
-| at 52:48
+| Подготовительный Python занятие 6.mp4
+| at 43:30
 |===
 
 == Install
