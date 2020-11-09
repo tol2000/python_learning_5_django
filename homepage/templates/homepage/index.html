@@ -7,13 +7,4 @@ Index
 {% block body %}
 <h2>Index</h2>
 <a href="{% url 'homepage:articles' %}">Articles page</a>
-<hr>
-
-{% for day in days %}
-<div>{{ day|date:"j F Y G:i" }}</div>
-{% endfor %}
-
-<hr>
-<div>{{ days_str|linenumbers|linebreaksbr }}</div>
-
 {% endblock %}

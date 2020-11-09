@@ -10,7 +10,7 @@ Articles
 <ul class="list-group">
     {% for article in articles %}
     <li class="list-group-item list-group-item-{% cycle 'primary' 'secondary' %}">
-        <a href="{% url 'homepage:index' %}">Article # {{ article }}</a>
+        <a href="{% url 'homepage:index' %}">Article from {{ article }}</a>
     </li>
     {% endfor %}
 </ul>

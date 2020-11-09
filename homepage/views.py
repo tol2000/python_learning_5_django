@@ -22,8 +22,9 @@ def index_page(request: HttpRequest):
 
 @require_GET
 def articles(request: HttpRequest):
+    date_now = datetime.today()
     articles_list = [
-        x for x in range(1, 8)
+        str(date_now - timedelta(days=x)) for x in range(35)
     ]
     args = {
         'articles': articles_list,
