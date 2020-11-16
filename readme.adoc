@@ -7,7 +7,7 @@ Django! :)
 | video | stopped at
 
 | Подготовительный Python занятие 6.mp4
-| at 43:30
+| at 1:02:33
 |===
 
 == Install

@@ -9,8 +9,13 @@ Articles
 
 <ul class="list-group">
     {% for article in articles %}
-    <li class="list-group-item list-group-item-{% cycle 'primary' 'secondary' %}">
-        <a href="{% url 'homepage:index' %}">Article from {{ article }}</a>
+    {% ifchanged %}
+    <li class="list-group-item list-group-item-primary"><h4> Year {{ article.0 }}, Month {{ article.1 }} </h4></li>
+    {% endifchanged %}
+    <li class="list-group-item list-group-item-{% cycle 'dark' 'secondary' %}">
+        <a href="{% url 'homepage:articles' %}{{ article }}">
+            Article from {{ article.2 }}.{{ article.1 }}.{{ article.0 }} {{ article.3 }}:{{ article.4 }}
+        </a>
     </li>
     {% endfor %}
 </ul>
