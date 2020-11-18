@@ -25,5 +25,6 @@ def redirect_to_default_app(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', redirect_to_default_app),
-    path('homepage/', include('homepage.urls'))
+    path('homepage/', include('homepage.urls')),
+    path('authors/', include('authors.urls'))
 ]
