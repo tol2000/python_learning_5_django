@@ -19,12 +19,12 @@ from django.urls import path, include
 
 
 def redirect_to_default_app(request):
-    return redirect('homepage/')
+    return redirect('authors/')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', redirect_to_default_app),
-    path('homepage/', include('homepage.urls')),
+    path('authors/', include('authors.urls')),
     path('authors/', include('authors.urls'))
 ]

@@ -9,7 +9,7 @@ from django.views.generic import TemplateView
 
 
 class ArticleView(TemplateView):
-    template_name = 'homepage/article.html'
+    template_name = 'authors/article.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -27,15 +27,22 @@ class ArticleView(TemplateView):
         return context
 
 
-@require_GET
-def articles(request: HttpRequest):
-    date_now = datetime.today()
-    articles_list = [
-        (x.year, x.month, x.day, x.hour, x.minute, x.second) for x in [date_now - timedelta(days=x) for x in range(35)]
-    ]
-    args = {
-        'articles': articles_list,
-        'client_info':
-            f'{request.method} to host {request.get_host()}'
-    }
-    return render(request, 'homepage/articles.html', args)
+class ArticlesView(TemplateView):
+    template_name = 'authors/articles.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        date_now = datetime.today()
+        articles_list = [
+            (x.year, x.month, x.day, x.hour, x.minute, x.second) for x in
+            [date_now - timedelta(days=x) for x in range(35)]
+        ]
+        args = {
+            'articles': articles_list,
+            'client_info':
+                f'{self.request.method} to host {self.request.get_host()}'
+        }
+
+        context.update(args)
+        return context
