@@ -1,8 +1,10 @@
 from django.urls import path
 from django.views.generic import TemplateView
 
+from . import views
+
 app_name = 'authors'
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='authors/index.html'), name='index')
+    path('', views.IndexView.as_view(), name='index')
 ]

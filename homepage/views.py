@@ -9,7 +9,7 @@ from django.views.generic import TemplateView
 
 
 class ArticleView(TemplateView):
-    template_name = 'authors/article.html'
+    template_name = 'homepage/article.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -28,7 +28,7 @@ class ArticleView(TemplateView):
 
 
 class ArticlesView(TemplateView):
-    template_name = 'authors/articles.html'
+    template_name = 'homepage/articles.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
