@@ -3,6 +3,8 @@ from django.db import models
 
 class Author(models.Model):
 
+    objects = None
+
     class Meta:
         verbose_name = 'Аффтар'
         verbose_name_plural = 'Аффтары'
@@ -20,6 +22,5 @@ class Author(models.Model):
 
     def __str__(self):
         return (
-            f'{self.pk:0>5}. Аффтар {self.first_name} {self.last_name}' +
-            (f' АКА {self.email}' if self.email else ' with no email')
+            f'{self.first_name} {self.last_name}'
         )

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
     {% load static %}
+    {% load my_tags %}
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -72,8 +73,8 @@
 
         <div class="container">
             <hr>
-            <div> {{ client_info }} </div>
-            <div>(C) Tolyan :)</div>
+            <div> {% page_info %} </div>
+            <div>{% joke %}</div>
         </div>
     </body>
 </html>

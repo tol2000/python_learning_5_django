@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
-from django.views.generic import TemplateView
+from .models import Author
 
 
-class IndexView(TemplateView):
+class IndexView(ListView):
 
     template_name = 'authors/index.html'
+    model = Author
+    context_object_name = 'authors'
+

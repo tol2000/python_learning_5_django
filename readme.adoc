@@ -7,7 +7,7 @@ Django! :)
 | video | stopped at
 
 | Подготовительный Python, занятие 7.mp4
-| at 0:43:41
+| at 0:55:13
 |===
 
 == Install
@@ -39,3 +39,10 @@ python manage.py runserver
 python manage.py startapp homepage
 ----
 
+== Redefining django's native templates
+
+=== Admin
+
+* Put in `templates/admin` file `base_site.html` from
+https://github.com/django/django/blob/master/django/contrib/admin/templates/admin[this link]
+* Define needed blocks such as `{% block branding %}` etc...
