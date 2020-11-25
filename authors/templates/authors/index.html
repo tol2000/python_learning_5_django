@@ -8,6 +8,7 @@ Index of authors
 
 {% block body %}
 <h1>Authors</h1>
+<a href="{% url 'authors:create' %}">Create</a>
 <div>
     <ul class="list-group">
         {% for author in authors %}
