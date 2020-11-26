@@ -26,5 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', redirect_to_default_app),
     path('homepage/', include('homepage.urls')),
-    path('authors/', include('authors.urls'))
+    path('authors/', include('authors.urls')),
+    path('playground/', include('playground.urls'))
 ]

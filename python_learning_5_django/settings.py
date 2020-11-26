@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'authors.apps.AuthorsConfig',
+    'playground.apps.PlaygroundConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
