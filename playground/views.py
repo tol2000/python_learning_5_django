@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from playground.models import StudentInfo
+
+
+class StudentsView(ListView):
+    template_name = 'playground/studentsinfo.html'
+    model = StudentInfo
+    context_object_name = 'studentsinfo'
