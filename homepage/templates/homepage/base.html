@@ -33,16 +33,17 @@
                             <a class="nav-link" href="{% url 'authors:index' %}">Authors <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'playground:studentsinfo' %}">Students Info <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{% url 'playground:index' %}">Playground :)<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Дополнительно
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/admin">Администрирование</a>
+                                <a class="dropdown-item" href="{% url 'playground:students' %}">Playground Students</a>
+                                <a class="dropdown-item" href="{% url 'playground:studentsinfo' %}">Playground Students Info</a>
                                 {# <div class="dropdown-divider"></div> #}
-                                {# <a class="dropdown-item" href="#">Something else here</a> #}
+                                <a class="dropdown-item" href="/admin">Администрирование</a>
                             </div>
                         </li>
                         <li class="nav-item">

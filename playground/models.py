@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
+from django.utils import timezone
+from datetime import timedelta
 
 UNIVERSITY_DOMAIN = 'otus.ru'
 
@@ -25,10 +27,13 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name} (id:{self.pk})'
+        return f'{self.first_name} {self.last_name}'
+        # (id:{self.pk})
 
 
 class StudentInfo(models.Model):
+
+    objects = None
 
     class Meta:
         verbose_name = 'StudentInfo'
@@ -47,7 +52,7 @@ class StudentInfo(models.Model):
         return f'{self.pass_id}'
 
 
-def create_student_info(instance: Student, created, **kwargs):
+def create_student_info(instance, created, **kwargs):
     if created:
         # names_count = Student.objects.filter(first_name=instance.first_name).count()
         # , last_name = instance.last_name
@@ -63,6 +68,8 @@ post_save.connect(create_student_info, sender=Student)
 
 class Publisher(models.Model):
 
+    objects = None
+
     class Meta:
         verbose_name = 'Publisher'
         verbose_name_plural = 'Publishers'
@@ -77,6 +84,8 @@ class Publisher(models.Model):
 
 class Article(models.Model):
 
+    objects = None
+
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
@@ -88,6 +97,10 @@ class Article(models.Model):
         Publisher,
         on_delete=models.CASCADE
     )
+
+    @property
+    def added_recently(self):
+        return self.pub_date > timezone.localdate() - timedelta(days=1)
 
     def __str__(self):
         return f'{self.title} on {self.pub_date}'
